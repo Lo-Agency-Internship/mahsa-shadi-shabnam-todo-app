@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>My tasks</title>
+</head>
+<body onclick>
+  <form action="" method="POST" onsubmit="sendIdbyForm()">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 90px;">
+      <a class="navbar-brand" href="#" style="margin-left: 22px;">Home</a>
+     
+        <label class="font-weight-bold text-info " style="margin-bottom: 0; margin-left: 662px;">Filters</label>
+        <input type="radio" name="type" value="all" class="mx-1">
+        <label for="male" class="mb-0">All</label>
+        <input type="radio" name="type" value="today" class="mx-1">
+        <label for="female" class="mb-0">today</label>
+        <input type="radio" name="type" value="week" class="mx-1">
+        <label for="other" class="mr-2 mb-0">this week</label> 
+        <input type="radio" name="type" value="month" class="mx-1">
+        <label for="child" class="mr-2 mb-0">this month</label> 
+        <button type="submit" id="logout" class="btn btn-main" style="margin-left:32px "><a href="signup.html" style="text-decoration: none; color: white;">Log Out</a></button>
+     
+      </nav>
+    <div class=" div1 "> 
+        <div class="task-input">
+          
+          <input class="taskinput" type="text" name="task"  placeholder="Add a new task" value="" required>
+        <input class="datepicker" type="date" placeholder="select date" name="date" value="">
+        <input  type="hidden" id="useId" name="userId" value="">
+      
+      
+
+       <button type="submit" id="search" href="#" class="btn btn-main" style="border: 1px solid #303030; margin-left: 54px;">Create ToDo Item</button></div>
+    </form>
+    <p id="test"></p>
+    <ul id="mylist" >
+    </ul>
+    
+</body>
+<script>
+
+  function getInfoFromBackend(){
+
+    let myUrl = window.location.pathname
+    console.log(window.location.href)
+    myUrl = myUrl.split('/')
+    console.log(myUrl)
+    let userId = myUrl[2];
+    console.log(userId);
+    let xhr = new XMLHttpRequest();
+    xhr.onload = () =>
+     { if (xhr.status >= 200 && xhr.status < 300){
+       const response = JSON.parse(xhr.response);
+       console.log(xhr.response);
+       console.log(response);
+       const ul = document.getElementById('mylist');
+
+       response.tasks.forEach((item)=>{
+        let x = document.createElement("INPUT");
+          x.setAttribute("type", "checkbox");
+          
+        
+         const element = document.createElement("li") ;
+         element.innerHTML = item.task;
+         ul.appendChild(element);
+         ul.appendChild(x);
+       })
+
+     } 
+      };
+        
+    xhr.open('GET',`http://localhost:3000/api/tasks/${userId}` ,true);
+    xhr.send();
+    }
+
+    window.onload = getInfoFromBackend();
+  </script>
+  </html>

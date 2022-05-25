@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  
+  }
+  
+  .div1 {
+    border-radius: 30%;
+    margin-top: 5%;
+    margin-left: 22%;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 16px;
+    align-content: center;
+    width: 50%;
+    padding-left: 12px;
+    padding-top: 10px;
+    background-color: white;
+  }
+  
+  body {
+    background-color: #303030;
+  }
+  
+  nav {
+    color: white;
+  }
+  
+  ul {
+    list-style: none;
+    display: inline;
+  }
+  
+  input[type=text] {
+    outline: none;
+    height: 42px;
+  }
+  
+  input[type=date] {
+    outline: none;
+    height: 42px;
+    margin-left: 2px;
+  }
+  
+  #logout {
+    color: white;
+    cursor: pointer;
+    border: 1px solid white;
+    margin-left: 60px;
+  }
