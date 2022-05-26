@@ -13,29 +13,28 @@
   <form action="" method="POST" onsubmit="sendIdbyForm()">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 90px;">
       <a class="navbar-brand" href="#" style="margin-left: 22px;">Home</a>
-     
-        <label class="font-weight-bold text-info " style="margin-bottom: 0; margin-left: 662px;">Filters</label>
-        <input type="radio" name="type" value="all" class="mx-1">
-        <label for="male" class="mb-0">All</label>
-        <input type="radio" name="type" value="today" class="mx-1">
-        <label for="female" class="mb-0">today</label>
-        <input type="radio" name="type" value="week" class="mx-1">
-        <label for="other" class="mr-2 mb-0">this week</label> 
-        <input type="radio" name="type" value="month" class="mx-1">
-        <label for="child" class="mr-2 mb-0">this month</label> 
-        <button type="submit" id="logout" class="btn btn-main" style="margin-left:32px "><a href="signup.html" style="text-decoration: none; color: white;">Log Out</a></button>
+        <button type="submit" id="logout" class="btn btn-main" style="margin-left:1050px "><a href="signup.html" style="text-decoration: none; color: white;">Log Out</a></button>
      
       </nav>
     <div class=" div1 "> 
+      
+      <div class="btn-group" >
+       <p style="padding-right: 12px; padding-top: 20px;">filter by date:</p>
+        <button >this week</button>
+        <button>this month</button>
+      </div> 
         <div class="task-input">
           
-          <input class="taskinput" type="text" name="task"  placeholder="Add a new task" value="" required>
-        <input class="datepicker" type="date" placeholder="select date" name="date" value="">
+          <input class="taskinput" type="text" name="task"  placeholder="Add a new task" value="" required style="border: 1px solid #303030 ;width: 224px;border-radius: 3px;">
+        <input class="datepicker" type="date" placeholder="select date" name="date" value="" style="border: 1px solid #303030 ;border-radius: 3px;margin-left:8px;">
+
         <input  type="hidden" id="useId" name="userId" value="">
       
       
 
-       <button type="submit" id="search" href="#" class="btn btn-main" style="border: 1px solid #303030; margin-left: 54px;">Create ToDo Item</button></div>
+       <button type="submit" id="search" href="#" class="btn btn-main" style="border: 1px solid #303030; margin-left: 54px;">Create ToDo Item</button>
+      
+      </div>
     </form>
     <p id="test"></p>
     <ul id="mylist" >

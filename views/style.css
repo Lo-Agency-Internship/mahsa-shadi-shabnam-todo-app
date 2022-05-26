@@ -4,12 +4,15 @@
     border: 0;
   
   }
+  body{
+    background:gray;
+
+  }
   
   .div1 {
     border-radius: 30%;
     margin-top: 5%;
     margin-left: 22%;
-    border: 1px solid rgb(255, 255, 255);
     border-radius: 16px;
     align-content: center;
     width: 50%;
@@ -48,3 +51,26 @@
     border: 1px solid white;
     margin-left: 60px;
   }
+  /* ///// */
+  .btn-group button {
+   background-color: white;
+    color: #303030;
+    padding: 5px 20px; 
+    margin-top: 3px;
+    cursor: pointer; 
+    float: left; 
+    border-radius: 3px;
+  }
+  .btn-group button:not(:last-child) {
+    border-right: none; 
+  }
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+.btn-group{
+  margin-left: 111px;
+    margin-bottom: 4px;
+    margin-top: 0px;
+}
