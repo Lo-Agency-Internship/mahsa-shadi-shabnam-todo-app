@@ -78,4 +78,23 @@ h2{
     padding: 10px;
     margin-top: 10px;
     width: 100%;
+
+}
+
+.form button[disabled]{
+    opacity: 0.5;
+}
+
+#error_message{
+    font-size: 13px;
+    padding:10px;
+    color:red
+}
+
+#under{
+    font-size: 15px; 
+    color: gray;
+    position:relative;
+    top:15px;
+    left:33px;
 }
