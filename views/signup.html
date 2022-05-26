@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-    <form action="" method="POST" id="form" class="form" autocomplete="off">
+    <form action="" method="POST" id="form" class="form" onsubmit="return formValidation()" autocomplete="off">
         <h2>SignUp</h2>
    
         <div class="form-control">
@@ -30,13 +30,27 @@
             <input type="password" id="password2"   name="password2"  value="" placeholder="confirm your password">
             <small>Error message</small>
         </div>
-        <button type="submit">Sign Up</button><span style="font-size: 15px; color: gray;">already have an account?<span><a href="login.html">login</a>
-    </form>
+        <button type="submit">Sign Up</button>
+        <span id="under">already have an account?<a href="login.html">login</a></span>
+         <div id="error_message">
+            </div>
+        </form>
+        
+
+    
 </div>
-<!-- <script src="signup.js"></script> -->
+<script src="/formValidation.js"></script>
+
 <script>
+    //window.onload ="getUsernameListFromDatabase()";
+</script>
     
 
-</script>
+
+
+
+    
+
+
 </body>
 </html>
