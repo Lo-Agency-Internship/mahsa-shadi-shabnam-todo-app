@@ -24,7 +24,7 @@ function formValidation() {
     }
     
     if (password.length == 0 || password.length < 5 ) {
-        say = "Password must be at least 5 characters and must contain at least 1 capital letter"
+        say = "Password must be at least 6 characters and must contain at least 1 capital letter"
         error_message.innerHTML = say;
        return false;
         
