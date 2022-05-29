@@ -1,44 +1,4 @@
-/*let userNameList = [];
 
-function getUsernameListFromDatabase(){
-    console.log('to check my function')
-
-    let xhr = new XMLHttpRequest();
-     xhr.onload = () => {
-     if (xhr.status >= 200 && xhr.status < 300){
-        const response = JSON.parse(xhr.response);
-        console.log('check response',xhr.response);
-        console.log(response);
-        userNameList = response;
-        console.log(userNameList,'helia');
-        return response
-   }
-
- };
- xhr.open('GET',"http://localhost:3000/api" ,true);
- xhr.send();
- 
-
-}
-if (userNameList && userNameList.find(username) ) {
-        say = " This password was registered before";
-        error_message.innerHTML = say;
-       return false;
-        
-
-
-
-console.log('mylist',userNameList);
-
-*/
-
-
-
-
-
-
-
-console.log('itis just a check')
 
 function formValidation() {
     const btn = document.querySelector('button');
@@ -46,9 +6,7 @@ function formValidation() {
     const password=document.getElementById('password').value;
     const password2=document.getElementById('password2').value;
     let say;
-    console.log(password.length);
-    console.log(password);
-        
+    
 
     
     if (username.length === 0) {

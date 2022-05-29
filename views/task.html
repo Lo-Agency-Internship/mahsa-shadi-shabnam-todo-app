@@ -9,74 +9,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <title>My tasks</title>
 </head>
-<body onclick>
+<body>
   <form action="" method="POST" onsubmit="sendIdbyForm()">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 90px;">
+    <nav class="navbar navbar-expand-lg  " style="height: 90px; ">
       <a class="navbar-brand" href="#" style="margin-left: 22px;">Home</a>
         <button type="submit" id="logout" class="btn btn-main" style="margin-left:1050px "><a href="signup.html" style="text-decoration: none; color: white;">Log Out</a></button>
      
       </nav>
     <div class=" div1 "> 
-      
-      <div class="btn-group" >
-       <p style="padding-right: 12px; padding-top: 20px;">filter by date:</p>
-        <button >this week</button>
-        <button>this month</button>
-      </div> 
+      <div class="alltask">
+   
         <div class="task-input">
           
-          <input class="taskinput" type="text" name="task"  placeholder="Add a new task" value="" required style="border: 1px solid #303030 ;width: 224px;border-radius: 3px;">
-        <input class="datepicker" type="date" placeholder="select date" name="date" value="" style="border: 1px solid #303030 ;border-radius: 3px;margin-left:8px;">
-
-        <input  type="hidden" id="useId" name="userId" value="">
-      
-      
+        <input class="taskinput" type="text" name="task"  placeholder="Add a new task" value="" required style="border: 1px solid #303030 ;width: 224px;border-radius: 3px;">
+        <input class="datepicker" type="date" placeholder="select date" name="date" value="" style="border: 1px solid #303030 ;border-radius: 3px;">
 
        <button type="submit" id="search" href="#" class="btn btn-main" style="border: 1px solid #303030; margin-left: 54px;">Create ToDo Item</button>
-      
-      </div>
-    </form>
-    <p id="test"></p>
-    <ul id="mylist" >
-    </ul>
+       <div class="btn-group" style="margin-top: 18px;">
+        
     
+        </div>
+      </div> 
+      </div>
+      
+    </form>
+    <button onclick="getInfoFromBackend()">All</button>
+        <button onclick="monthlyButton(createHtmlElement)">This Month</button>
+        <button onclick="weeklyButton(createHtmlElement)">This Week</button>
+        
+        <div id="outer"></div>
+      
+        
+    
+    <script src="/task.js"></script>
 </body>
-<script>
 
-  function getInfoFromBackend(){
 
-    let myUrl = window.location.pathname
-    console.log(window.location.href)
-    myUrl = myUrl.split('/')
-    console.log(myUrl)
-    let userId = myUrl[2];
-    console.log(userId);
-    let xhr = new XMLHttpRequest();
-    xhr.onload = () =>
-     { if (xhr.status >= 200 && xhr.status < 300){
-       const response = JSON.parse(xhr.response);
-       console.log(xhr.response);
-       console.log(response);
-       const ul = document.getElementById('mylist');
-
-       response.tasks.forEach((item)=>{
-        let x = document.createElement("INPUT");
-          x.setAttribute("type", "checkbox");
-          
-        
-         const element = document.createElement("li") ;
-         element.innerHTML = item.task;
-         ul.appendChild(element);
-         ul.appendChild(x);
-       })
-
-     } 
-      };
-        
-    xhr.open('GET',`http://localhost:3000/api/tasks/${userId}` ,true);
-    xhr.send();
-    }
-
-    window.onload = getInfoFromBackend();
-  </script>
   </html>
