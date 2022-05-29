@@ -13,7 +13,6 @@ function DateobjToString(date){
     }
     let year = date.getFullYear();
     let dateString = `${year}-${month}-${day}`;
-    //console.log(year + "-"+ month +"-");
     return dateString
 
     }
@@ -23,7 +22,7 @@ function filterDateMonthly(date){
     let nextMonth = new Date();
     nextMonth.setDate(new Date().getDate() + 30);
     let startDate = DateobjToString(todayDate);
-    let endDate = DateobjToString(nexMonth);
+    let endDate = DateobjToString(nextMonth);
     return  date > startDate && date < endDate
     }
 

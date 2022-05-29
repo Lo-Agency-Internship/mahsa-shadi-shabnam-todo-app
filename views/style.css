@@ -1,48 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+
+
 * {
     margin: 0;
     padding: 0;
     border: 0;
   
   }
-  body{
-    background:gray;
+  body {
+    background: linear-gradient(#e66465, #9198e5);
+    height: 680px;
+    font-family: 'Mali', cursive;
 
   }
   
   .div1 {
+    border:3px solid pink;
     border-radius: 30%;
     margin-top: 5%;
     margin-left: 22%;
     border-radius: 16px;
     align-content: center;
-    width: 50%;
+    width: 60%;
+    height: max-content;
     padding-left: 12px;
-    padding-top: 10px;
+    padding-top: 58px;
     background-color: white;
   }
-  
-  body {
-    background-color: #303030;
-  }
-  
-  nav {
-    color: white;
-  }
-  
-  ul {
-    list-style: none;
-    display: inline;
-  }
-  
   input[type=text] {
     outline: none;
     height: 42px;
+    padding-left: 12px;
+    margin-left: 45px;
   }
+ 
+  
+  
+  nav {
+    background-color:(#e66465);
+    font-family: 'Mali', cursive;
+    color:white;
+  }
+  
+  
   
   input[type=date] {
     outline: none;
     height: 42px;
-    margin-left: 2px;
+    margin-left:12px;
   }
   
   #logout {
@@ -53,24 +60,123 @@
   }
   /* ///// */
   .btn-group button {
-   background-color: white;
-    color: #303030;
-    padding: 5px 20px; 
-    margin-top: 3px;
-    cursor: pointer; 
-    float: left; 
-    border-radius: 3px;
-  }
-  .btn-group button:not(:last-child) {
-    border-right: none; 
-  }
-  .btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-.btn-group{
-  margin-left: 111px;
-    margin-bottom: 4px;
-    margin-top: 0px;
+    background-color: white;
+     color: #1e0d22;
+     padding: 5px 20px; 
+     margin-top: 3px;
+     font-size: 20px;
+     cursor: pointer; 
+     float: left; 
+     border-radius: 3px;
+   }
+   .btn-group button:not(:last-child) {
+     border-right: none; 
+   }
+   .btn-group:after {
+     content: "";
+     clear: both;
+     display: table;
+   }
+ .btn-group{
+   margin-left: 224px;
+     margin-bottom: 4px;
+     margin-top: 0px;
+ }
+ 
+
+
+/****** dynamic html ********/
+#outer{
+  
+  height: fit-content;
+  width:100%;
+  margin-top:25px;
+}
+
+.dynamic{
+  display:flex;
+  justify-content: space-around;
+  
+}
+
+.test{
+  display:flex;
+  justify-content: space-around;
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width:100%;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+p{
+    position: relative;
+    top:-12px;
+}
+button{
+    background-color: pink;
+    height:max-content;
+    border-radius: 15px;
 }
