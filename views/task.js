@@ -66,6 +66,7 @@ xhttp.send();
 function createHtmlElement(response){
   
   let outer = document.getElementById('outer');
+  	outer.innerHTML="";
     response.forEach((item)=>{
     let div = document.createElement('div');
     div.className = "test";
